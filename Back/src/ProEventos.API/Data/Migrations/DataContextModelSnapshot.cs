@@ -33,7 +33,7 @@ namespace ProEventos.API.Data.Migrations
                     b.Property<string>("Lote")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Quantidade")
+                    b.Property<int>("QtdPessoas")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Tema")
