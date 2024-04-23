@@ -11,6 +11,7 @@ using ProEventos.Application.Contratos;
 using ProEventos.Persistence;
 using ProEventos.Persistence.Contextos;
 using ProEventos.Persistence.Contratos;
+using AutoMapper;
 
 namespace ProEventos.API
 {
@@ -36,6 +37,8 @@ namespace ProEventos.API
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore
                     );
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddScoped<IEventoService, EventoService>();
             services.AddScoped<IEventoPersist, EventoPersist>();
             services.AddScoped<IGeralPersist, GeralPersist>();
@@ -45,11 +48,6 @@ namespace ProEventos.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProEventos.API", Version = "v1" });
             });
-        }
-
-        private void AddNewtonsoftJson()
-        {
-            throw new NotImplementedException();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
